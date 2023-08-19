@@ -1,0 +1,69 @@
+<div class="section text-center d-flex justify-content-center mt-5">
+    <div class="row">
+        <div *ngIf="loginStatus" class="card ">
+            <form  #loginForm="ngForm"  class=" p-5  " (ngSubmit)="login(loginForm)" >  
+                <h3>Login</h3>
+                <div class="form-group">
+                    <input 
+                    type="email"
+                    placeholder="Email"
+                    name="email" 
+                    ngModel
+                    required
+                    required
+                    #email="ngModel"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                    [ngClass]="{'invalid': email.invalid && email.touched }"
+                    >
+                     <span  style="color: red;" *ngIf="email.touched && email.errors">
+                        <small *ngIf="email.errors?.['required']">Email is a required field!</small>
+                        <small *ngIf="email.errors?.['pattern']"> This is not a valid Email!!!</small>
+                     </span>
+                </div>
+               
+                <div class="form-group">
+                    <input 
+                    type="password" 
+                    placeholder="Password" 
+                    name="password" 
+                    #password="ngModel"
+                    ngModel 
+                    [ngClass]="{'invalid': password.touched && password.invalid  }"
+                    minlength="6"
+                    maxlength="10"
+                    required
+                    >
+                    <span class="error" style="color: red;" *ngIf="password?.invalid && password.touched ">
+                        <small> password should be greater than 6 digits</small>
+                         </span>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info text-white " [disabled]="loginForm.invalid" >Login</button>
+                </div>
+                <div>
+                    <span> <a style="color: blue;cursor: pointer;" (click)="isLogin()" >Register</a> !if not Register </span>
+                </div>
+            </form>
+        </div>   
+        <div   *ngIf="!loginStatus" class="card ">
+            <form #registerForm="ngForm"  class=" p-5  " (ngSubmit)="register(registerForm)" >  
+                <h3>Register</h3>
+                <div class="form-group">
+                    <input type="text" placeholder="Name" name="name" ngModel >
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email"  name="email" ngModel required >
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" name="password" ngModel  required>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info text-white " [disabled]="registerForm.invalid" >Register</button>
+                </div>
+                <div>
+                    <span> <a style="color: blue;cursor: pointer;" (click)="isLogin()" >login</a> !if already register </span>
+                </div>
+            </form>
+        </div>  
+    </div>
+</div>

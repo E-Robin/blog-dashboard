@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import '../node_modules/toastr/toastr';
+
+
+:root{
+
+    --primary : rgb(134, 209, 134);
+    --secondary: rgb(109, 170, 208);
+}
+small{
+    margin-right: 8px;
+}

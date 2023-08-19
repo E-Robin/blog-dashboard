@@ -1,0 +1,22 @@
+.form-group{
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    // height: 2.2rem;
+}
+input{
+    height: 2.8rem;
+    width: 16rem;
+}
+
+.card{
+    background-color: antiquewhite;
+}
+
+.shadow{
+    box-shadow: 2px 3px 4px 5px rgb(194, 180, 180)smoke;
+}
+
+.invalid{
+    border: 1px solid red;
+}

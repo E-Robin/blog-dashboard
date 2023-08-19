@@ -1,0 +1,53 @@
+<div class="section mt-5 text-center ">
+    <form  #categoryForm="ngForm"  class="bg-success   m-auto  w-75 p-5  "  (ngSubmit)="submit(categoryForm)" >
+        <div class=" d-flex flex-row justify-content-center">
+
+            <div class="from-group">
+                <input type="text" placeholder="Add category" name="category" ngModel [(ngModel)]="category" >
+            </div>
+            <div>
+                <button type="submit" class="btn btn-info"> {{isEdit ? 'update category' : 'Add category' }} </button>
+
+            </div>
+                
+     
+        </div>
+       
+    
+    </form>
+</div>
+
+<div class="section text-center">
+    <table class="table w-50 m-auto  table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    s.no 
+                </th>
+                <th>
+                    category
+                </th>
+                <th>
+                    action
+                </th>
+
+            </tr>
+            
+        </thead>
+        <tbody >
+            <tr *ngFor="let category of categories; let i=index  "  >
+                <th>
+                    {{i+1}}
+                </th>
+                <td>
+                     {{category.data.category}}
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="delete(category.id)" >Delete</button>
+                    <button class="btn btn-info" (click)="edit(category)" >Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

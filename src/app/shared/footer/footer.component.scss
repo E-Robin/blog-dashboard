@@ -1,0 +1,30 @@
+.list{
+    display: flex;
+    flex-direction: row   ;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+ul{
+    list-style: none;
+    // background-color: red;
+
+}
+li{
+    margin-right: 0.6rem;
+    // background-color: yellow;
+    padding: 0.3rem;
+    min-width:  6rem;
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+nav{
+    // margin-top: 4rem;
+    height: 4rem;
+    background-color: rgb(35, 166, 184);
+    color: white;
+    
+}

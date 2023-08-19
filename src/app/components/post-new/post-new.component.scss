@@ -1,0 +1,31 @@
+.form-group{
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+form{
+
+    width: 80%;
+    padding: 3rem;
+    // display: flex;
+    // justify-content: center;
+    border: 1px solid rgb(125, 243, 252);
+    // background-color: rgb(172, 235, 214);
+}
+
+input,select {
+    height: 3rem;
+   
+}
+button{
+    height: 3rem;
+    margin: 0px 3px;
+    outline: none;
+}
+
+.card{
+    box-shadow: whitesmoke 2px 3px ;
+    background-color: rgb(142, 236, 253);
+    padding: 2rem;
+    // background:red;
+}

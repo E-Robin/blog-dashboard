@@ -1,0 +1,71 @@
+<div class="section d-flex justify-content-center " >
+    <div class="card w-75 m-3 p-3 text-center " >
+        <h3>The All New Blogs Are here</h3>
+        <div class="button-group m-3">
+            <button class="btn btn-warning" routerLink="/newPost">
+                New Post
+            </button >
+            <button class="btn btn-danger"  routerLink="">
+                back to Dashboard
+            </button>
+        </div>
+    </div>
+    
+</div>
+<!-- <div  *ngIf="postData" class="section">
+    <div class="row d-flex justify-content-center">
+        <div  *ngFor="let post of postData" class="col-5">
+            <div class="card mb-3" style="width: auto; "  >
+                <img class="card-img-top" src="{{post.data.postImgPath}}" alt="Card image cap" height="300" >
+                <div class="card-body">
+                    <small class="text-danger">Design</small>
+                    <small class="text-primary" > Featured</small>
+                    <small class="text-info" >views</small>
+                    <!-- <small class="text-success">updates</small>   -->
+                  <!-- <h5 class="card-title">{{post.data.title }}   </h5>
+                  <p class="card-text">{{post.data.description}} </p>
+                  <a   routerLink="/newPost"  [queryParams]="{id:post.id}"  class="btn btn-primary">Edit</a>
+                  <button class="btn btn-danger" (click)="delete(post.id,post.data.postImgPath)" >Delete</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>     --> 
+    <div class="row d-flex justify-content-center" *ngIf="postData" >
+        <div class="col-9">
+            <div class="card">
+                <table class="table  table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>No</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let post of postData; let i = index" >
+                            <td  >{{i+1}}</td>
+                            <td> <img src="{{post.data.postImgPath}}" alt="" > </td>
+                            <td>{{post.data.title}}</td>
+                            <td>{{post.data.description | slice:0:35  }}{{ post.data.description.length > 35 ? '...' : ''}}</td>
+                            <td>{{post.data.createdAt.toDate() | date }}</td>
+                            <td>
+                                <button routerLink="/newPost"  [queryParams]="{id:post.id}"  class="btn btn-primary">Edit</button>
+                                <button class="btn btn-danger" (click)="delete(post.id,post.data.postImgPath)" >Delete</button>
+                                <button *ngIf="!post.data?.isFeatured" class="btn btn-success"  (click)="isFeatured(post.id,true)" > mark as Featured</button>
+                                <button *ngIf="post.data?.isFeatured" class="btn btn-warning" (click)="isFeatured(post.id,false)">Remove Featured</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+   
+   
