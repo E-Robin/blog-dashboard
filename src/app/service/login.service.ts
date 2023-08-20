@@ -38,7 +38,7 @@ export class LoginService {
          this.loadUser()
         
         this.toastr.success('User LoggedIn successfully')
-        this.router.navigate([''])
+        this.router.navigate(['/dashboard'])
       }
     
     
