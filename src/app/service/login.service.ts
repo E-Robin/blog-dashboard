@@ -73,7 +73,7 @@ export class LoginService {
         this.loggedIn$.next(false)
         this.islogged = false
         this.authStatus = false
-        this.router.navigate(['/login'])
+        this.router.navigate([''])
       })
     }
 
