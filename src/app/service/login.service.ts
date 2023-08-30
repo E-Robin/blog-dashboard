@@ -38,7 +38,12 @@ export class LoginService {
          this.loadUser()
         
         this.toastr.success('User LoggedIn successfully')
-        this.router.navigate(['/dashboard'])
+
+        // this.router.navigate(['/dashboard'])
+        setTimeout(() => {
+          this.router.navigate(['/dashboard'])
+        }, 200);
+        
       }
     
     
@@ -58,6 +63,7 @@ export class LoginService {
       // localStorage.setItem('user',(res?.email))
       // localStorage.setItem('email',JSON.stringify(emailObject))
       // console.log( JSON.parse(JSON.stringify(res)) ,'user detail')
+      
       localStorage.setItem('user',JSON.stringify(res))
 
       // localStorage.setItem('user',res)

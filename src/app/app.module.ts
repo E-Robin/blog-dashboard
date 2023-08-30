@@ -19,6 +19,8 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { PostComponent } from './components/post/post.component';
 import { PostNewComponent } from './components/post-new/post-new.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth/auth.guard';
+
 
 
 @NgModule({
@@ -49,7 +51,7 @@ import { LoginComponent } from './login/login.component';
         
 
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

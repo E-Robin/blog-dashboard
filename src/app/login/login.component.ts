@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { LoginService } from '../service/login.service';
 import { NgForm } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,15 @@ export class LoginComponent {
   @ViewChild('registerForm') registerFormss!:NgForm
   loginStatus:boolean = true;
 
-  constructor(private _loginService:LoginService){
+  constructor(private _loginService:LoginService,private router:Router ){
+
+    // if(localStorage.getItem('user')){
+    //   this.router.navigate(['/dashboard'])
+    // }
+    const email =  JSON.parse (JSON.parse( JSON.stringify( localStorage.getItem('user'))))?.email
+    if(email){
+      this.router.navigate(['/dashboard'])
+    }
 
   }
 

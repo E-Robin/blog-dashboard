@@ -9,7 +9,7 @@ import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
-    path:'dashboard',component:DashboardComponent ,
+    path:'dashboard',component:DashboardComponent ,canActivate:[AuthGuard]
   },
   {
     path:'categories' , component:CategoriesComponent ,
